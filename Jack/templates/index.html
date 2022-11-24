@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Posts {% endblock %}</h1>
+    {% for post in bd %}
+    <table>
+        <tr>
+            <th>Номер</th>
+            <th>Имя</th>
+            <th>Значение</th>
+        </tr>
+        <tr>
+            <th>{{ post['created'] }}</th>
+            <th>{{ post['title'] }}</th>
+            <th>{{ post['content'] }}</th>   
+        </tr>
+    </table>
+    {% endfor %}
+    {% for el in bd %}
+        <a href="/{{ el.id }}/edit/">Изменить о {{ el.id }} посте</a>
+        <br>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">
+        <input type="text" name="title" placeholder="Имя" value="{{ request.form['title'] }}"></input>
+        <input name="content" type="text" placeholder="Давай введи">{{ request.form['content'] }}</input>
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}
